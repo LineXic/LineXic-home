@@ -10,9 +10,9 @@ import ToolingIcon from './icons/IconTooling.vue'
       <ToolingIcon />
     </template>
     <template #heading>最新文章</template>
-    <a href="https://linexic.top/2024/09/01/guigu-css-22/"><h2>【前端22】优先级</h2></a>
+    <a href="https://blog.linexic.top/2024/09/01/guigu-css-22/"><h2>【前端22】优先级</h2></a>
     <p>本文基于尚硅谷Web前端基础教程发布，你也可以理解成这是一篇尚硅谷教程笔记，当然这里也有我的一些经验总结....</p>
-   >>> <a href="https://linexic.top/2024/09/01/guigu-css-22">阅读更多...</a>
+   >>> <a href="https://blog.linexic.top/2024/09/01/guigu-css-22">阅读更多...</a>
     
   </WelcomeItem>
   <WelcomeItem>
