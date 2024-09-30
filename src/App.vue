@@ -5,7 +5,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <a href="/"><img style="border-radius: 50%;" alt="logo" class="logo" src="https://blog.linexic.top/img/favicon.ico" width="125" height="125" /></a>
+    <a href="/"><img style="border-radius: 50%;" alt="logo" class="logo" src="./logo.png" width="125" height="125" /></a>
 
     <div class="wrapper">
       <HelloWorld msg="LineXic!" />
