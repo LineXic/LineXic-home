@@ -14,6 +14,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/">主页</RouterLink>
         <RouterLink to="/about">关于我</RouterLink>
         <RouterLink to="/jiedan">接单</RouterLink>
+        <RouterLink to="https://en.linexic.top/#" target="_blank">英语语法</RouterLink>
       </nav>
     </div>
   </header>
