@@ -43,7 +43,7 @@ import ToolingIcon from './icons/IconTooling.vue'
     <li><a href="https://taoshu.in/" target="_blank">涛叔博客</a></li>
     <p></p>
     <li><a href="https://blog.rainiar.top/" target="_blank">寒夏摸鱼站</a></li>
-    <p>这是一个老咸鱼的个人博客</p>
+    <p>稀奇古怪技术集散地</p>
     <li><a href="https://blog.pinpe.top/" target="_blank">Pinpe 的云端</a></li>
     <p>一个属于自己的云朵</p>
     <li><a href="https://thirdshire.com/" target="_blank">第三夏尔</a></li>
