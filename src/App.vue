@@ -11,9 +11,11 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld msg="LineXic!" />
 
       <nav>
-        <RouterLink to="/">主页</RouterLink>
-        <RouterLink to="/about">关于我</RouterLink>
-        <RouterLink to="/jiedan">接单</RouterLink>
+        <div class="nav2">
+        <a href="/">主页</a>
+        <a href="/about">关于我</a>
+        <a href="/jiedan">接单</a>
+      </div>
       </nav>
     </div>
   </header>
