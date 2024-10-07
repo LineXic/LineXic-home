@@ -5,7 +5,13 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <a href="https://blog.linexic.top/about/"><img style="border-radius: 50%;" alt="logo" class="logo" src="./logo.png" width="125" height="125" /></a>
+    <a href="https://blog.linexic.top/about/">
+<img style="border-radius: 50%;"
+     alt="logo" 
+     class="logo" 
+     src="./logo.png" 
+     width="125" height="125" />
+   </a>
 
     <div class="wrapper">
       <HelloWorld msg="LineXic!" />
@@ -24,6 +30,18 @@ import HelloWorld from './components/HelloWorld.vue'
 </template>
 
 <style scoped>
+
+.nav2 {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px; /* 轻微的圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 轻微的阴影 */
+    cursor: pointer;
+  }
+
 header {
   line-height: 1.5;
   max-height: 100vh;
