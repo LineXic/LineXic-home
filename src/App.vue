@@ -6,7 +6,7 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <header>
     <a href="https://blog.linexic.top/about/">
-<img style="border-radius: 50%;"
+   <img style="border-radius: 50%;"
      alt="logo" 
      class="logo" 
      src="./logo.png" 
