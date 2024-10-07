@@ -15,10 +15,4 @@ import ToolingIcon from './icons/IconTooling.vue'
    >>> <a href="https://blog.linexic.top/2024/09/20/month-3/">阅读更多...</a>
     
   </WelcomeItem>
-  <WelcomeItem>
-    <template #icon>
-      <CommunityIcon />
     </template>
-
-  </WelcomeItem>
-</template>
