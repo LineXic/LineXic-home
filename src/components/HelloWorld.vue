@@ -8,7 +8,7 @@ defineProps<{
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-    欢迎来到LineXic的个人主页，你可以来我的<a href="https://blog.linexic.top">博客</a>看看，坐一会喝一杯茶交一个朋友
+    欢迎来到LineXic的个人主页，你可以来我的<a href="https://blog.linexic.top">博客</a>或者给我<a href="https://talk.linexic.top">留言</a>看看，坐一会喝一杯茶交一个朋友
     </h3>
   </div>
 </template>
