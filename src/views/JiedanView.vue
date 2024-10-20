@@ -70,8 +70,3 @@
   }
 }
 </style>
-
-   <script>
-document.title = "LineXic主页 - 接单";
-      alert(document.title); 
-   </script>
