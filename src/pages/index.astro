@@ -1,17 +1,153 @@
+﻿---
+import Parser from "rss-parser";
+import "../styles/home.css";
+
+const RSS_URL = "https://www.linexic.top/rss.xml";
+const parser = new Parser();
+
+let feedTitle = "最新文章";
+let feedLink = "https://www.linexic.top/";
+let articles = [];
+
+try {
+	const response = await fetch(RSS_URL);
+	if (response.ok) {
+		const xml = await response.text();
+		const feed = await parser.parseString(xml);
+		feedTitle = feed.title ?? feedTitle;
+		feedLink = feed.link ?? feedLink;
+		articles = (feed.items ?? []).slice(0, 6);
+	}
+} catch (error) {
+	articles = [];
+}
+
+const formatDate = (value) => {
+	if (!value) return "";
+	const date = new Date(value);
+	if (Number.isNaN(date.getTime())) return "";
+	return date.toLocaleDateString("zh-CN", {
+		year: "numeric",
+		month: "short",
+		day: "2-digit",
+	});
+};
+
+const textFrom = (value = "") =>
+	value
+		.replace(/<[^>]*>/g, " ")
+		.replace(/\s+/g, " ")
+		.trim();
+
+const excerptFrom = (item) => {
+	const raw =
+		item.contentSnippet ||
+		item.summary ||
+		item.content ||
+		item["content:encoded"] ||
+		"";
+	const cleaned = textFrom(String(raw));
+	return cleaned.length > 120 ? `${cleaned.slice(0, 120)}…` : cleaned;
+};
 ---
 
----
-
-<html lang="en">
+<html lang="zh-CN">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta name="color-scheme" content="light dark" />
+		<title>LineXic</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<main>
+			<section class="hero">
+				<img class="avatar" src="/avatar.png" alt="头像" loading="lazy" />
+				<div>
+					<p class="eyebrow">个人主页</p>
+					<h1>LineXic</h1>
+					<p class="subtitle">记录日常、折腾与灵感。这里是我的数字书房与创作归档。</p>
+					<div class="actions">
+						<a class="button primary" href={feedLink} target="_blank" rel="noreferrer">进入博客</a>
+						<a class="button" href={RSS_URL} target="_blank" rel="noreferrer">订阅 RSS</a>
+					</div>
+					<div class="meta-grid">
+						<div class="meta-card">
+							<span class="meta-icon" aria-hidden="true">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<circle cx="12" cy="12" r="10" />
+									<circle cx="12" cy="10" r="3" />
+									<path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" />
+								</svg>
+							</span>
+							<div class="meta-text">
+								<p class="meta-title">身份</p>
+								<p class="meta-value">学生</p>
+							</div>
+						</div>
+						<div class="meta-card">
+							<span class="meta-icon" aria-hidden="true">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M17.97 9.304A8 8 0 0 0 2 10c0 4.69 4.887 9.562 7.022 11.468" />
+									<path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
+									<circle cx="10" cy="10" r="3" />
+								</svg>
+							</span>
+							<div class="meta-text">
+								<p class="meta-title">地址</p>
+								<p class="meta-value">中国</p>
+							</div>
+						</div>
+						<div class="meta-card">
+							<span class="meta-icon" aria-hidden="true">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<circle cx="12" cy="12" r="10" />
+									<path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+									<path d="M2 12h20" />
+								</svg>
+							</span>
+							<div class="meta-text">
+								<p class="meta-title">语言</p>
+								<p class="meta-value">中文</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<div class="section-head">
+					<h2>{feedTitle}</h2>
+					<a href={feedLink} target="_blank" rel="noreferrer">查看全部</a>
+				</div>
+				{articles.length ? (
+					<div class="articles">
+						{articles.map((article) => (
+							<article class="article-card">
+								<h3>
+									<a href={article.link} target="_blank" rel="noreferrer">
+										{article.title}
+									</a>
+								</h3>
+								<p class="article-meta">
+									{formatDate(article.isoDate || article.pubDate)}
+								</p>
+								{excerptFrom(article) ? (
+									<p class="article-desc">{excerptFrom(article)}</p>
+								) : null}
+							</article>
+						))}
+					</div>
+				) : (
+					<div class="empty">
+						RSS 内容加载中或暂时不可用，稍后刷新即可展示最新文章。
+					</div>
+				)}
+			</section>
+
+			<footer>© {new Date().getFullYear()} LineXic · Built with Astro.</footer>
+		</main>
 	</body>
 </html>
