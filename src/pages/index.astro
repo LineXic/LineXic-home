@@ -7,7 +7,7 @@ const parser = new Parser();
 
 let feedTitle = "最新文章";
 let feedLink = "https://www.linexic.top/";
-let articles = [];
+let articles: any[] = [];
 
 try {
 	const response = await fetch(RSS_URL);
@@ -22,7 +22,7 @@ try {
 	articles = [];
 }
 
-const formatDate = (value) => {
+const formatDate = (value: string | undefined) => {
 	if (!value) return "";
 	const date = new Date(value);
 	if (Number.isNaN(date.getTime())) return "";
@@ -39,7 +39,7 @@ const textFrom = (value = "") =>
 		.replace(/\s+/g, " ")
 		.trim();
 
-const excerptFrom = (item) => {
+const excerptFrom = (item: any) => {
 	const raw =
 		item.contentSnippet ||
 		item.summary ||
@@ -124,7 +124,7 @@ const excerptFrom = (item) => {
 				</div>
 				{articles.length ? (
 					<div class="articles">
-						{articles.map((article) => (
+						{articles.map((article: typeof articles[0]) => (
 							<article class="article-card">
 								<h3>
 									<a href={article.link} target="_blank" rel="noreferrer">
