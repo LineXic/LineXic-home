@@ -1,4 +1,5 @@
-ï»¿@import url("https://fonts.googleapis.cn/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap");
+@import url("https://fontsapi.zeoseven.com/3/main/result.css");
+@import url("https://fonts.googleapis.cn/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap");
 
 :root {
 	color-scheme: light dark;
@@ -51,7 +52,7 @@
 
 body {
 	margin: 0;
-	font-family: "Noto Sans SC", system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+	font-family: "º®²õÈ«Ô²Ìå", "Noto Sans SC", system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
 	color: var(--ink);
 	background: radial-gradient(circle at top, var(--bg-highlight) 0%, var(--bg) 45%, var(--bg-deep) 100%);
 	min-height: 100vh;
@@ -106,9 +107,11 @@ main {
 }
 
 h1 {
-	font-family: "Noto Serif SC", "Noto Sans SC", serif;
+	font-family: "º®²õÈ«Ô²Ìå", "Noto Sans SC", serif;
 	font-size: clamp(32px, 4vw, 54px);
 	margin: 0 0 6px;
+	font-weight: 700;
+	font-style: normal;
 }
 
 .subtitle {
@@ -230,9 +233,11 @@ h1 {
 }
 
 .section-head h2 {
-	font-family: "Noto Serif SC", "Noto Sans SC", serif;
+	font-family: "º®²õÈ«Ô²Ìå", "Noto Sans SC", serif;
 	font-size: clamp(24px, 3vw, 34px);
 	margin: 0;
+	font-weight: 700;
+	font-style: normal;
 }
 
 .section-head a {
@@ -317,4 +322,5 @@ footer {
 		justify-self: center;
 	}
 }
+
 
