@@ -52,7 +52,7 @@
 
 body {
 	margin: 0;
-	font-family: "º®²õÈ«Ô²Ìå", "Noto Sans SC", system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+	font-family: "ï¿½ï¿½ï¿½ï¿½È«Ô²ï¿½ï¿½", "Noto Sans SC", system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
 	color: var(--ink);
 	background: radial-gradient(circle at top, var(--bg-highlight) 0%, var(--bg) 45%, var(--bg-deep) 100%);
 	min-height: 100vh;
@@ -107,7 +107,7 @@ main {
 }
 
 h1 {
-	font-family: "º®²õÈ«Ô²Ìå", "Noto Sans SC", serif;
+	font-family: "ï¿½ï¿½ï¿½ï¿½È«Ô²ï¿½ï¿½", "Noto Sans SC", serif;
 	font-size: clamp(32px, 4vw, 54px);
 	margin: 0 0 6px;
 	font-weight: 700;
@@ -233,7 +233,7 @@ h1 {
 }
 
 .section-head h2 {
-	font-family: "º®²õÈ«Ô²Ìå", "Noto Sans SC", serif;
+	font-family: "ï¿½ï¿½ï¿½ï¿½È«Ô²ï¿½ï¿½", "Noto Sans SC", serif;
 	font-size: clamp(24px, 3vw, 34px);
 	margin: 0;
 	font-weight: 700;
@@ -320,6 +320,53 @@ footer {
 	.avatar {
 		max-width: 320px;
 		justify-self: center;
+	}
+
+	.actions {
+		flex-wrap: nowrap;
+	}
+
+	.actions .button {
+		padding: 10px 14px;
+		font-size: 13px;
+		flex: 1;
+		justify-content: center;
+	}
+
+	.meta-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: repeat(2, minmax(0, 1fr));
+		gap: 8px;
+	}
+
+	.meta-card {
+		padding: 8px 10px;
+		gap: 6px;
+	}
+
+	.meta-card:nth-child(1),
+	.meta-card:nth-child(2) {
+		grid-column: 1;
+	}
+
+	.meta-card:nth-child(3) {
+		grid-column: 2;
+		grid-row: 1 / span 2;
+	}
+
+	.meta-icon {
+		width: 22px;
+		height: 22px;
+	}
+
+	.meta-icon svg {
+		width: 13px;
+		height: 13px;
+	}
+
+	.meta-value {
+		font-size: 12px;
 	}
 }
 
